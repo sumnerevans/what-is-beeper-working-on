@@ -238,6 +238,7 @@
                 \item configurable auto-archive
                 \item mark as read
                 \item chat muting
+                \item keyboard shortcuts
             \end{itemize}
         \end{column}
     \end{columns}
@@ -263,8 +264,10 @@
         \begin{itemize}
             \item Message send status
             \item E2BE on all bridges
+            \item Command bar (Ctrl+K)
             \item Scheduled messages
             \item Per-network spaces
+            \item Universal search
         \end{itemize}
     \end{multicols}
 \end{frame}
@@ -298,8 +301,9 @@
 
 \begin{frame}{Scaling: Solution}
     \begin{center}
-        \textbf{We are building a homeserver optimized for unfederated bridge
-        traffic called hungryserv.}
+        \textbf{We are sharding our homeserver based on bridged vs. unbridged
+        traffic.} \\
+        The new service for bridged traffic is called \textit{Hungryserv}.
     \end{center}
     \vspace{1cm}
     \pause
