@@ -95,23 +95,6 @@
     and Matrix fit the bill!
 \end{frame}
 
-\begin{frame}{What I work on at Beeper}
-    I am on the newly created \textit{Scaling} team.
-
-    Our current objective is to prepare Beeper for rocket-ship growth.
-    \pause
-
-    I was previously part of the \textit{Bridges} team. 
-
-    Notable projects include:
-    \begin{itemize}
-        \item Writing the LinkedIn bridge
-        \item Implementing massive stability improvements in the Signal bridge
-        \item Implementing incremental infinite backfill in our WhatsApp and
-            Facebook bridges
-    \end{itemize}
-\end{frame}
-
 \begin{frame}{Overview}
     \setbeamertemplate{section in toc}[sections numbered]
     \tableofcontents[hideallsubsections]
@@ -135,14 +118,179 @@
     we are focusing on \textit{people talking to one another}.
 \end{frame}
 
-\begin{frame}{How we are getting there}
-    % focusing on DMs not group chats
-    % bring all your chats to the same place - switch with no cost
+\begin{frame}{What is Beeper?}
+    \begin{center}
+        \textbf{Beeper is an app that brings all of your chat networks together into
+            a single inbox.}
+    \end{center}
+    \centerline{\includegraphics[width=0.3\textwidth]{images/beeper-mobile}}
+\end{frame}
 
-    % We encourage users to connect \textbf{all} of their chat networks.
+\begin{frame}{What is Beeper?}
+    \textbf{Beeper allows you to consolidate messages from 15+ chat apps into a
+        single inbox.}
+
+    \pause
+    \begin{itemize}
+        \item Beeper is available on on macOS, Windows, Linux iPhone, iPad,
+            Android and Chrome OS.
+        \item Beeper is built on top of the Matrix protocol.
+        \item Beeper encrypts all chats, including bridged chats, by
+            default\footnote[frame]{We have to momentarily decrypt your chat
+            messages to translate from the other network to Matrix, but we never
+            log or store your unencrypted messages.}.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{We are targeting individuals, not enterprises}
+    \begin{center}
+        \textbf{\Large We want to beat WhatsApp, not Slack.}
+        \vspace{1cm}
+        \pause
+
+        \textbf{\large Our core competency is the 50th highest priority at the
+        big tech companies.}
+
+        Most chat networks are an afterthought within the ecosystem of a larger
+        company. At Beeper, chat is all we care about.
+    \end{center}
+\end{frame}
+
+\begin{frame}{How we make money}
+    \textbf{We charge a flat \$10/month fee to use Beeper.} This fee allows
+    users to connect as many chat networks as they want.
+    \pause
+
+    \textbf{No ads. No data mining.} We take advantage of Matrix's E2EE to add
+    additional privacy guarantees.
+    \pause
+
+    \begin{center}
+        \LARGE
+        \textbf{The transaction is simple:\\ users pay us money for a service.}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Bridging to a glorious Matrix future}
+    We see bridges as a way to onboard users into the Matrix ecosystem.
+
+    Users can switch to a new app without loosing a single conversation!
+    \pause
+
+    \vspace{1cm}
+    \begin{center}
+        \Large
+        \textbf{We encourage our users to connect \textit{all} of their chat
+        networks to Beeper.}
+    \end{center}
+\end{frame}
+
+\section{What we've built}
+
+\begin{frame}{Bridges, bridges, and more bridges!}
+    (<>)
+\end{frame}
+% imc
+
+% Chat networks dialogue
+% Fancy inbox
+% Message send status
+
+\section{Current challenges}
+
+\begin{frame}{Scaling: Problem}
+    \textbf{Each user gets their own bridge for each network they connect.}
+
+    That means we run a lot of bridges, and each bridge brings more traffic!
+    \pause
+
+    \begin{itemize}
+        \item On average, each user brings \textbf{4716 puppeted users}.
+        \item On average, each user and their puppets collectively account for
+            \textbf{100k events}!
+    \end{itemize}
+
+    \pause
+    None of the bridge traffic is federated, but Synapse is aggressively
+    federated.
+\end{frame}
+
+\begin{frame}{Scaling: Solution}
+    \begin{center}
+        \textbf{We are building a homeserver optimized for unfederated bridge
+        traffic called hungryserv.}
+    \end{center}
+    \vspace{1cm}
+    \pause
+
+    By siphoning off unfederated bridge traffic to a different service, we allow
+    Synapse to do what it does best: federate with other Matrix homeservers.
+    \pause
+
+    We can also optimize operations such as room deletion and infinite backfill.
+
+    Because it's unfederated, we don't have to implement state resolution.
+\end{frame}
+
+\begin{frame}{The iOS app}
+    Beeper's clients are forks of Element's clients. Having the Element
+    codebase as a starting point has been hugely beneficial to us.
+    \pause
+
+    However, the iOS app needs some love.
+    \vspace{1cm}
+    \pause
+
+    Element is currently working on Element X for iOS which uses the Rust SDK.
+
+    We are taking a different approach: \textbf{rewriting the iOS app
+    piece-by-piece and changing the architecture as necessary.}
 \end{frame}
 
 \section{What it's like to work at Beeper}
+
+\begin{frame}{What I work on at Beeper}
+    I am on the newly created \textit{Scaling} team.
+
+    Our current objective is to prepare Beeper for rocket-ship growth.
+    \vspace{0.5cm}
+    \pause
+
+    I was previously part of the \textit{Bridges} team. 
+
+    Notable projects included:
+    \begin{itemize}
+        \item Writing the LinkedIn bridge
+        \item Adding bridge status reporting and message send status.
+        \item Implementing massive stability improvements in the Signal bridge
+        \item Implementing incremental infinite backfill in our WhatsApp and
+            Facebook bridges
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{BRAD days: hacking to make Beeper a better company}
+    Every third Friday, we have a Beeper Radical Awesomeness Day (BRAD).
+
+    \begin{itemize}
+        \item  BRAD is an optional day to build whatever you want to make Beeper
+            a better company to work at.
+        \item Some BRAD day projects have made it into clients such as scheduled
+            messages.
+        \item Other projects include internal tools such as bots, build
+            automations, POCs, and more.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Team Retreats}
+    About three times a year, we have a team retreat.
+
+    \centerline{\includegraphics[width=\textwidth]{images/retro}}
+
+    {
+        You can read more about them on my blog at
+        \href{https://sumnerevans.com/categories/work-retreats/}{\texttt{sumnerevans.com/categories/work-retreats}}.
+    }
+\end{frame}
 
 \begin{frame}[standout]
     \Large
