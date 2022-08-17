@@ -187,14 +187,87 @@
 
 \section{What we've built}
 
-\begin{frame}{Bridges, bridges, and more bridges!}
-    (<>)
-\end{frame}
-% imc
+\begin{frame}{Custom clients for desktop and mobile}
+    We forked Element, and added custom features.
+    \vspace{0.5cm}
 
-% Chat networks dialogue
-% Fancy inbox
-% Message send status
+    \centerline{\includegraphics[width=\textwidth]{images/desktop-and-mobile}}
+\end{frame}
+
+\begin{frame}{Bridges, bridges, and more bridges!}
+    We have built bridges to 15 networks:
+    \begin{multicols}{2}
+        \begin{itemize}
+            \item iMessage
+            \item WhatsApp
+            \item Facebook Messenger
+            \item SMS (Android)
+            \item Telegram
+            \item Signal
+            \item LinkedIn
+            \item Instagram
+            \item Twitter
+            \item Google Chat
+        \end{itemize}
+    \end{multicols}
+
+    \pause
+    We are actively developing new mautrix-based bridges to Discord and Slack.
+
+    \pause
+    You can also connect to IRC (via the Libera.chat bridge) and the rest of the
+    Matrix federation.
+\end{frame}
+
+\begin{frame}{Easy chat network connection from clients}
+    \centerline{\includegraphics[width=0.9\textwidth]{images/chat-networks-dialog}}
+
+    I'll demo this later!
+\end{frame}
+
+\begin{frame}{Chat inbox management tools}
+    \begin{columns}
+        \begin{column}{0.3\textwidth}
+            \centerline{\includegraphics[width=\textwidth]{images/inbox-3.0}}
+        \end{column}
+        \begin{column}{0.7\textwidth}
+            We've implemented lots of useful inbox management features such as:
+            \begin{itemize}
+                \item chat pinning
+                \item chat archiving
+                \item configurable auto-archive
+                \item mark as read
+                \item chat muting
+            \end{itemize}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Start new chat}
+    \begin{columns}
+        \begin{column}{0.6\textwidth}
+            On some networks, you can start a new chat directly from Beeper.
+            \vspace{1cm}
+
+            You can also load your Google Contacts to get the correct names on
+            your chats.
+        \end{column}
+        \begin{column}{0.4\textwidth}
+            \centerline{\includegraphics[width=\textwidth]{images/start-new-chat}}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Much, much, more!}
+    \begin{multicols}{2}
+        \begin{itemize}
+            \item Message send status
+            \item E2BE on all bridges
+            \item Scheduled messages
+            \item Per-network spaces
+        \end{itemize}
+    \end{multicols}
+\end{frame}
 
 \section{Current challenges}
 
@@ -292,10 +365,13 @@
     }
 \end{frame}
 
+\begingroup
+\def\insertframenumber{\relax}
 \begin{frame}[standout]
     \Large
     Questions?
 \end{frame}
+\endgroup
 
 \end{document}
 % Local Variables:
